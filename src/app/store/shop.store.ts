@@ -1,4 +1,10 @@
-import { signalStore, withComputed, withState } from '@ngrx/signals';
+import {
+  patchState,
+  signalStore,
+  withComputed,
+  withMethods,
+  withState,
+} from '@ngrx/signals';
 import { initialShopSlice } from './shop.slice';
 import { computed } from '@angular/core';
 import { buildProductListVm, buildCartVm } from './shop-vm.builder';
@@ -22,5 +28,10 @@ export const ShopStore = signalStore(
         store.cartVisible(),
       ),
     ),
+  })),
+  withMethods((store) => ({
+    updateSearchWord(searchWord: string): void {
+      patchState(store, { searchWord });
+    },
   })),
 );

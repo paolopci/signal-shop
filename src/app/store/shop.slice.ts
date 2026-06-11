@@ -1,4 +1,5 @@
 import { Product } from '../models/product.model';
+import { ALL_PRODUCTS } from '../data/all-products';
 
 export interface ShopSlice {
   // elenca tutte le proprietà che arrivano da fuori e che l'utente modifica direttamente
@@ -20,9 +21,12 @@ export interface ShopSlice {
 
 // definisco il mio stato iniziale
 export const initialShopSlice: ShopSlice = {
-  products: [],
+  products: ALL_PRODUCTS,
   searchWord: '',
-  cartQuantities: {},
-  cartVisible: false,
+  cartQuantities: {
+    'signal-booster': 3,
+    'reactive-refresher': 2,
+  },
+  cartVisible: true,
   taxRate: 0.08,
 };

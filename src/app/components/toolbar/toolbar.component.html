@@ -2,7 +2,12 @@
 
 <mat-icon class="logo">sensors</mat-icon>
 <span>The Signals Shop</span>
-<input type="search" placeholder="search" [ngModel]="store.searchWord()" />
+<input
+  type="search"
+  placeholder="search"
+  [ngModel]="store.searchWord()"
+  (ngModelChange)="store.updateSearchWord($event)"
+/>
 <button
   mat-icon-button
   class="cart-button"
