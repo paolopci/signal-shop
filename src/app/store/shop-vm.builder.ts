@@ -42,6 +42,7 @@ export function buildCartVm(
     subTotal,
     tax,
     total,
+    itemsCount,
     isActive,
     isVisible,
   };
