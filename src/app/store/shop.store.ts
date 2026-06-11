@@ -8,6 +8,7 @@ import {
 import { initialShopSlice } from './shop.slice';
 import { computed } from '@angular/core';
 import { buildProductListVm, buildCartVm } from './shop-vm.builder';
+import * as updaters from './shop.updaters';
 
 export const ShopStore = signalStore(
   { providedIn: 'root' },
@@ -30,8 +31,16 @@ export const ShopStore = signalStore(
     ),
   })),
   withMethods((store) => ({
-    updateSearchWord(searchWord: string): void {
-      patchState(store, { searchWord });
-    },
+    setSearchWord: (searchWord: string) =>
+      patchState(store, updaters.setSearchWord(searchWord)),
+    addToCart: (productId: string) =>
+      patchState(store, updaters.addToCart(productId)),
+    viewCart: () => patchState(store, updaters.viewCart()),
+    hideCart: () => patchState(store, updaters.hideCart()),
+    incrementQuantity: (productId: string) =>
+      patchState(store, updaters.incrementQuantity(productId)),
+    decrementQuantity: (productId: string) =>
+      patchState(store, updaters.decrementQuantity(productId)),
+    checkoutCart: () => patchState(store, updaters.checkoutCart()),
   })),
 );
