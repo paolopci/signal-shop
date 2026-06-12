@@ -40,3 +40,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Repository-local agent instructions
+AGENTS.md
+shared/*.md
