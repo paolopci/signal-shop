@@ -23,10 +23,7 @@ export interface ShopSlice {
 export const initialShopSlice: ShopSlice = {
   products: ALL_PRODUCTS,
   searchWord: '',
-  cartQuantities: {
-    'signal-booster': 3,
-    'reactive-refresher': 2,
-  },
+  cartQuantities: {},
   cartVisible: false,
   taxRate: 0.08,
 };

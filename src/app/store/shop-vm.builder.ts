@@ -14,6 +14,9 @@ export function buildProductListVm(
   function buildProductItems() {
     const word = searchWord.trim().toLowerCase();
 
+    // se il campo search è vuoto non visualizzo nessun prodotto!!!!
+    if (!word) return [];
+
     return products
       .filter((product) => product.name.toLowerCase().includes(word))
       .map((product) => ({

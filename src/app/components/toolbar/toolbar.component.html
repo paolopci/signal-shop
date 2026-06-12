@@ -6,7 +6,7 @@
   type="search"
   placeholder="search"
   [ngModel]="store.searchWord()"
-  (ngModelChange)="store.updateSearchWord($event)"
+  (ngModelChange)="store.setSearchWord($event)"
 />
 <button
   mat-icon-button
@@ -14,6 +14,7 @@
   [matBadge]="vm.itemsCount"
   [matBadgeHidden]="!vm.isActive"
   [disabled]="!vm.isActive"
+  (click)="store.viewCart()"
 >
   <mat-icon class="cart">shopping_cart</mat-icon>
 </button>
