@@ -39,6 +39,7 @@ export function buildCartVm(
   const itemsCount = items.length;
   const isActive = itemsCount > 0;
   const isVisible = cartVisible;
+  const canCheckout = isActive;
 
   return {
     items,
@@ -48,6 +49,7 @@ export function buildCartVm(
     itemsCount,
     isActive,
     isVisible,
+    canCheckout,
   };
 
   function buildCartItems(): CartItemVm[] {
