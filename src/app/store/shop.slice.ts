@@ -19,6 +19,8 @@ export interface ShopSlice {
   readonly taxRate: number; // tassa applicata ai prodotti
 }
 
+export type PersistedShopSlice = Pick<ShopSlice, 'cartQuantities'>;
+
 // definisco il mio stato iniziale
 export const initialShopSlice: ShopSlice = {
   products: ALL_PRODUCTS,

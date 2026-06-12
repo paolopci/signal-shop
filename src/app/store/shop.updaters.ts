@@ -46,6 +46,6 @@ export function decrementQuantity(
 export function checkoutCart(): PartialStateUpdater<ShopSlice> {
   return (state) => ({
     cartVisible: false,
-    Quantities: {},
+    cartQuantities: {},
   });
 }
