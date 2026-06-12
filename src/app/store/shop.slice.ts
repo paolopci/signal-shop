@@ -19,9 +19,11 @@ export interface ShopSlice {
   readonly taxRate: number; // tassa applicata ai prodotti
 }
 
+//The code you've shared defines a Signal Store in Angular
+// using NgRx Signals, which manages the state
 export type PersistedShopSlice = Pick<ShopSlice, 'cartQuantities'>;
 
-// definisco il mio stato iniziale
+// The code you've shared defines a **Signal Store** in Angular using **NgRx Signals**, which
 export const initialShopSlice: ShopSlice = {
   products: ALL_PRODUCTS,
   searchWord: '',
